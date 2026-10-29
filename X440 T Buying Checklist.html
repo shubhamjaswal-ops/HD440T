@@ -1,0 +1,311 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>X440 T Buying Checklist</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,600;1,700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+/* Layout: a single workshop job-card column — deal strip, overall gauge, four stage cards with tick rows */
+:root{
+  --bg:#EDEFF2; --card:#FFFFFF; --ink:#1A222C; --muted:#5E6A78; --line:#D8DDE3;
+  --accent:#D2561B; --accent-soft:#FBE8DD; --done:#2F7A53; --done-soft:#E2F1E8;
+  --display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12171D; --card:#1B222A; --ink:#E8ECF0; --muted:#97A3B0; --line:#2C3540;
+  --accent:#F07A3E; --accent-soft:#3A2418; --done:#5BBE8A; --done-soft:#17302A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12171D; --card:#1B222A; --ink:#E8ECF0; --muted:#97A3B0; --line:#2C3540;
+  --accent:#F07A3E; --accent-soft:#3A2418; --done:#5BBE8A; --done-soft:#17302A; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+.wrap{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+header{display:flex;flex-direction:column;gap:4px}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-family:var(--display);font-style:italic;font-weight:700;font-size:40px;line-height:1;margin:0;text-wrap:balance}
+h1 span{color:var(--accent)}
+.deal{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:var(--muted);margin-top:6px}
+.deal b{color:var(--ink);font-variant-numeric:tabular-nums}
+.dash{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 16px;display:flex;flex-direction:column;gap:16px}
+.rings{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
+.ringbox{position:relative;width:132px;height:132px;flex:none}
+.ringbox.small{width:104px;height:104px}
+.ring{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:11}
+.ring .track{stroke:var(--line)}
+.ring .prog{stroke:var(--accent);stroke-linecap:round;stroke-dasharray:0 100;transition:stroke-dasharray .5s ease}
+.ring .prog.full{stroke:var(--done)}
+.ringlabel{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ringlabel .big{font-family:var(--display);font-style:italic;font-weight:700;font-size:32px;line-height:1;font-variant-numeric:tabular-nums}
+.small .ringlabel .big{font-size:24px}
+.ringlabel .lbl{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.kpis{flex:1;min-width:150px;display:grid;gap:10px}
+.kpi{display:flex;align-items:baseline;gap:8px}
+.kv{font-family:var(--display);font-style:italic;font-weight:700;font-size:22px;font-variant-numeric:tabular-nums;min-width:52px}
+.kv.accent{color:var(--accent)}
+.kv.ok{color:var(--done)}
+.kl{font-size:13px;color:var(--muted)}
+.stages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media (max-width:520px){.stages{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stg{display:flex;flex-direction:column;gap:6px;padding:10px;border-radius:10px;background:var(--bg);border:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
+.stg:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.stg .sn{font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stg .sp{font-family:var(--display);font-style:italic;font-weight:700;font-size:20px;font-variant-numeric:tabular-nums;line-height:1}
+.stg.complete .sp{color:var(--done)}
+.stg .mini{height:6px;background:var(--line);border-radius:99px;overflow:hidden}
+.stg .mini i{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width .4s}
+.stg.complete .mini i{background:var(--done)}
+.next{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:10px;background:var(--accent-soft);font-size:14px}
+.next.ok{background:var(--done-soft)}
+.next .tag{flex:none;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--accent);padding-top:3px}
+.next.ok .tag{color:var(--done)}
+.next .nt{flex:1;min-width:0}
+.next .ns{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+.gauge{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.gtop{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.gnum{font-family:var(--display);font-style:italic;font-weight:700;font-size:30px;font-variant-numeric:tabular-nums}
+.gnum small{font-size:16px;color:var(--muted)}
+.bar{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:99px;transition:width .3s}
+.bar.full i{background:var(--done)}
+.status{font-size:12px;color:var(--muted)}
+.crit-left{font-size:13px;color:var(--accent);font-weight:600}
+.crit-left.ok{color:var(--done)}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.shead{width:100%;display:flex;align-items:center;gap:12px;padding:14px 16px;background:none;border:0;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.shead:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.step{font-family:var(--display);font-style:italic;font-weight:700;font-size:22px;color:var(--accent);width:22px;flex:none}
+section.complete .step{color:var(--done)}
+.stitle{flex:1;min-width:0}
+.stitle h2{font-family:var(--display);font-style:italic;font-weight:600;font-size:22px;margin:0;line-height:1.1}
+.stitle p{margin:2px 0 0;font-size:12px;color:var(--muted)}
+.count{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--muted);flex:none}
+section.complete .count{color:var(--done)}
+.chev{flex:none;transition:transform .2s;color:var(--muted)}
+section.closed .chev{transform:rotate(-90deg)}
+section.closed ul{display:none}
+ul{list-style:none;margin:0;padding:0 8px 8px;display:flex;flex-direction:column;gap:2px}
+li label{display:flex;gap:12px;align-items:flex-start;padding:10px 8px;border-radius:8px;cursor:pointer}
+li label:hover{background:var(--bg)}
+li input{appearance:none;flex:none;width:22px;height:22px;margin:0;border:2px solid var(--line);border-radius:6px;display:grid;place-items:center;cursor:pointer;background:var(--card);transition:background .15s,border-color .15s}
+li input:checked{background:var(--done);border-color:var(--done)}
+li input:checked::after{content:"";width:6px;height:11px;border:solid var(--card);border-width:0 2.5px 2.5px 0;transform:translateY(-1px) rotate(45deg)}
+li input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.txt{flex:1;min-width:0}
+.txt b{font-weight:600}
+li.checked .txt{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
+.must{display:inline-block;margin-left:6px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:1px 6px;border-radius:4px;vertical-align:1px}
+li.checked .must{color:var(--done);background:var(--done-soft)}
+footer{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--muted);padding-top:4px}
+button.reset{font:inherit;font-size:12px;color:var(--muted);background:none;border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer}
+button.reset:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button.reset.arm{color:var(--accent);border-color:var(--accent)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Runway Moto Dreamz · Solan</div>
+    <h1>Harley-Davidson <span>X440 T</span></h1>
+    <div class="deal">
+      <div>Final on-road <b>₹3,34,703</b></div>
+      <div>Warranty <b>up to 1 lakh km</b></div>
+      <div>RSA <b>all-India</b></div>
+    </div>
+  </header>
+
+  <div class="dash">
+    <div class="rings">
+      <div class="ringbox">
+        <svg viewBox="0 0 120 120" class="ring" aria-hidden="true">
+          <circle cx="60" cy="60" r="52" class="track"/>
+          <circle cx="60" cy="60" r="52" class="prog" id="ringAll" pathLength="100"/>
+        </svg>
+        <div class="ringlabel"><span class="big" id="pctAll">0%</span><span class="lbl">overall</span></div>
+      </div>
+      <div class="ringbox small">
+        <svg viewBox="0 0 120 120" class="ring" aria-hidden="true">
+          <circle cx="60" cy="60" r="52" class="track"/>
+          <circle cx="60" cy="60" r="52" class="prog must" id="ringMust" pathLength="100"/>
+        </svg>
+        <div class="ringlabel"><span class="big" id="mustNum">0/0</span><span class="lbl">must-dos</span></div>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><span class="kv" id="gnum">0/0</span><span class="kl">items ticked</span></div>
+        <div class="kpi"><span class="kv" id="stagesDone">0/4</span><span class="kl">stages complete</span></div>
+        <div class="kpi"><span class="kv accent" id="crit">0</span><span class="kl" id="critLbl">must-dos left</span></div>
+      </div>
+    </div>
+    <div class="stages" id="stageBars"></div>
+    <div class="next" id="next"></div>
+    <div class="status" id="status">Ticks save on this device.</div>
+  </div>
+
+  <div id="sections"></div>
+
+  <footer>
+    <span>Tick only what's in writing, not promised.</span>
+    <button class="reset" id="reset" type="button">Clear all ticks</button>
+  </footer>
+</div>
+
+<script>
+const STAGES=[
+ {id:"loan",title:"Loan",sub:"Before signing the finance",items:[
+  ["l1","Interest rate is <b>reducing balance</b>, not flat",1],
+  ["l2","₹15,000 cash discount <b>still applies</b> with a loan",1],
+  ["l3","Compared 2 offers: own bank vs dealer financier"],
+  ["l4","Know total interest in ₹ + processing fee"],
+  ["l5","Foreclosure / prepayment charges noted"],
+  ["l6","No credit shield or extra insurance bundled in"],
+  ["l7","Docs: PAN, Aadhaar, 3 salary slips, 6-month statement, photos, cheque"],
+  ["l8","Sanction letter in writing; EMI date after salary day"]]},
+ {id:"deal",title:"Deal & booking",sub:"Everything in writing before you pay",items:[
+  ["d1","Final <b>₹3,34,703</b> written and signed",1],
+  ["d2","Extended warranty shows <b>1 lakh km</b>",1],
+  ["d3","Bank details verified in person; pay only against <b>stamped receipt</b>",1],
+  ["d4","H.O.G. kit dropped, or swapped for free sintered pads"],
+  ["d5","RSA covers all of India, duration noted"],
+  ["d6","Insurance lists zero dep, RTI, consumables, tyre, cashless"],
+  ["d7","Helmet has ISI + ECE/DOT sticker"],
+  ["d8","Pending recalls / updates done before delivery"],
+  ["d9","Delivery date committed in writing"]]},
+ {id:"delivery",title:"Delivery check",sub:"In daylight, before signing the delivery note",items:[
+  ["v1","Manufacturing month <b>within 2–3 months</b>",1],
+  ["v2","Invoice chassis + engine numbers <b>match the bike</b>",1],
+  ["v3","Odometer under 10 km; tyre DOT within 6 months"],
+  ["v4","Paint and panels clean; no oil leaks"],
+  ["v5","Two keys, manual, stamped service book"],
+  ["v6","Warranty certificate shows 1 lakh km"],
+  ["v7","Bash plate, centre stand, leg guard fitted"],
+  ["v8","Lights, horn, indicators, USB, TC + ABS switches work"],
+  ["v9","Phone paired with H-D Connect"],
+  ["v10","Mirrors clear at speed; pillion comfortable for 5 min"]]},
+ {id:"run",title:"First 1,000 km",sub:"Run-in and ride setup",items:[
+  ["r1","Stay under 5,000 rpm, vary the throttle"],
+  ["r2","First service done on time"],
+  ["r3","Phone mount + intercom before the first Delhi trip"],
+  ["r4","Spares at home: levers, indicator, pads, mirror"]]}
+];
+const KEY="x440t-checklist-v1";
+let done={}, closed={}, db=null, docRef=null, writing=false, pending=false;
+
+try{const s=JSON.parse(localStorage.getItem(KEY)||"{}");done=s.done||{};closed=s.closed||{}}catch(e){}
+
+const total=STAGES.reduce((n,s)=>n+s.items.length,0);
+const crits=STAGES.flatMap(s=>s.items.filter(i=>i[2]).map(i=>i[0]));
+
+function saveLocal(){try{localStorage.setItem(KEY,JSON.stringify({done,closed}))}catch(e){}}
+
+function render(){
+  const root=document.getElementById("sections");
+  root.innerHTML="";
+  STAGES.forEach((s,idx)=>{
+    const n=s.items.filter(i=>done[i[0]]).length, all=n===s.items.length;
+    const sec=document.createElement("section");
+    sec.className=(all?"complete ":"")+(closed[s.id]?"closed":"");
+    sec.innerHTML=`<button class="shead" type="button" aria-expanded="${!closed[s.id]}" id="h-${s.id}">
+      <span class="step">${idx+1}</span>
+      <span class="stitle"><h2>${s.title}</h2><p>${s.sub}</p></span>
+      <span class="count">${all?"✓ ":""}${n}/${s.items.length}</span>
+      <svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button><ul></ul>`;
+    const ul=sec.querySelector("ul");
+    s.items.forEach(([id,text,must])=>{
+      const li=document.createElement("li");
+      if(done[id])li.className="checked";
+      li.innerHTML=`<label><input type="checkbox" id="c-${id}" ${done[id]?"checked":""}><span class="txt">${text}${must?'<span class="must">Must</span>':""}</span></label>`;
+      li.querySelector("input").addEventListener("change",e=>{
+        if(e.target.checked)done[id]=true;else delete done[id];
+        saveLocal();render();sync();
+      });
+      ul.appendChild(li);
+    });
+    sec.querySelector(".shead").addEventListener("click",()=>{
+      closed[s.id]=!closed[s.id];saveLocal();render();
+      document.getElementById("h-"+s.id).focus();
+    });
+    root.appendChild(sec);
+  });
+  root.style.display="flex";root.style.flexDirection="column";root.style.gap="14px";
+  renderDash();
+}
+
+function renderDash(){
+  const n=STAGES.reduce((a,s)=>a+s.items.filter(i=>done[i[0]]).length,0);
+  const pct=Math.round(n/total*100);
+  const mustDone=crits.filter(c=>done[c]).length, left=crits.length-mustDone;
+  const ra=document.getElementById("ringAll"), rm=document.getElementById("ringMust");
+  ra.style.strokeDasharray=`${pct} 100`; ra.classList.toggle("full",n===total);
+  const mp=Math.round(mustDone/crits.length*100);
+  rm.style.strokeDasharray=`${mp} 100`; rm.classList.toggle("full",!left);
+  document.getElementById("pctAll").textContent=pct+"%";
+  document.getElementById("mustNum").textContent=`${mustDone}/${crits.length}`;
+  document.getElementById("gnum").textContent=`${n}/${total}`;
+  const sd=STAGES.filter(s=>s.items.every(i=>done[i[0]])).length;
+  document.getElementById("stagesDone").textContent=`${sd}/${STAGES.length}`;
+  const cr=document.getElementById("crit");
+  cr.textContent=left; cr.classList.toggle("ok",!left); cr.classList.toggle("accent",!!left);
+  document.getElementById("critLbl").textContent=left?"must-dos left":"all must-dos ticked";
+
+  const sb=document.getElementById("stageBars"); sb.innerHTML="";
+  STAGES.forEach(s=>{
+    const k=s.items.filter(i=>done[i[0]]).length, all=k===s.items.length;
+    const b=document.createElement("button"); b.type="button"; b.className="stg"+(all?" complete":"");
+    b.innerHTML=`<span class="sn">${s.title}</span><span class="sp">${all?"✓ ":""}${k}/${s.items.length}</span><span class="mini"><i style="width:${k/s.items.length*100}%"></i></span>`;
+    b.addEventListener("click",()=>{closed[s.id]=false;saveLocal();render();
+      const h=document.getElementById("h-"+s.id);h.scrollIntoView({behavior:"smooth",block:"start"});h.focus({preventScroll:true})});
+    sb.appendChild(b);
+  });
+
+  let nx=null;
+  for(const s of STAGES){const it=s.items.find(i=>!done[i[0]]);if(it){nx=[s,it];break}}
+  const ne=document.getElementById("next");
+  ne.classList.toggle("ok",!nx);
+  ne.innerHTML=nx?`<span class="tag">Next up</span><span class="nt">${nx[1][1]}<span class="ns">${nx[0].title}${nx[1][2]?" · Must":""}</span></span>`
+    :`<span class="tag">Done</span><span class="nt">Every item ticked. Enjoy the ride.</span>`;
+}
+
+function setStatus(t){document.getElementById("status").textContent=t}
+
+async function sync(){
+  if(!docRef)return;
+  if(writing){pending=true;return}
+  writing=true;
+  try{await docRef.set({done:{...done},updated:Date.now()});setStatus("Saved · syncs across your devices")}
+  catch(e){setStatus("Saved on this device only")}
+  writing=false;
+  if(pending){pending=false;sync()}
+}
+
+let resetArmed=false,resetTimer;
+document.getElementById("reset").addEventListener("click",e=>{
+  const b=e.currentTarget;
+  if(!resetArmed){resetArmed=true;b.classList.add("arm");b.textContent="Tap again to clear";
+    resetTimer=setTimeout(()=>{resetArmed=false;b.classList.remove("arm");b.textContent="Clear all ticks"},3000);return}
+  clearTimeout(resetTimer);resetArmed=false;b.classList.remove("arm");b.textContent="Clear all ticks";
+  done={};saveLocal();render();sync();
+});
+
+render();
+
+(async()=>{
+  try{
+    db=await window.claude?.use?.("db");
+    if(!db)return;
+    docRef=db.doc("checklist/x440t");
+    let first=true;
+    docRef.onSnapshot(snap=>{
+      if(snap.exists){
+        const d=snap.data()||{};
+        if(!writing){done={...(d.done||{})};saveLocal();render()}
+      }else if(first&&Object.keys(done).length){sync()}
+      first=false;
+      setStatus("Saved · syncs across your devices");
+    },()=>setStatus("Saved on this device only"));
+  }catch(e){}
+})();
+</script>
+
+</body></html>
